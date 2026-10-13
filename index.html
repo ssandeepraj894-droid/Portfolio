@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>C. Sandeepraj | B.Tech AI & Data Science Student | Creative Technologist & UI/UX</title>
+  <meta name="description" content="Portfolio of C. Sandeepraj - B.Tech Artificial Intelligence & Data Science student at Gnanamani College of Technology. Bridging Machine Learning (Python, SQL, C) with UI/UX Design & Motion.">
+  <meta name="keywords" content="C Sandeepraj, Sandeepraj, AI and Data Science, Python, SQL, C, Power BI, UI UX, Figma, Machine Learning, Gnanamani College, Portfolio">
+  <meta name="author" content="C. Sandeepraj">
+  <meta name="theme-color" content="#090d16">
+
+  <!-- Open Graph / Meta for WhatsApp, LinkedIn, Mobile Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="C. Sandeepraj | AI & Data Science Student & Creative Technologist">
+  <meta property="og:description" content="Explore projects, technical process, and skill matrix of C. Sandeepraj (Python, SQL, C, UI/UX, Power BI).">
+  <meta property="og:image" content="profile.jpg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Phosphor Icons (Universal Mobile & Web) -->
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient Subtle Background Canvas (Auto-throttled on mobile for 60fps) -->
+  <canvas id="particleCanvas"></canvas>
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+
+  <!-- Custom Cursor for Desktop Only -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION (Desktop + Full Mobile Drawer)
+       ========================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="nav-container">
+      <a href="#hero" class="brand-link" aria-label="Go to top">
+        <span class="brand-badge">&lt;/&gt;</span>
+        <div class="brand-text">
+          <span class="brand-name">sandeepraj<span class="text-cyan">/portfolio</span></span>
+          <span class="brand-sub">AI &amp; Data Science // Creative Tech</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#process" class="nav-link">Engineering Process</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#credentials" class="nav-link">Experience</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Desktop Actions -->
+      <div class="header-actions">
+        <button class="btn btn-sm btn-accent" id="openRecruiterBtn" aria-label="Open Recruiter Quick-View">
+          <i class="ph ph-briefcase"></i>
+          <span>Recruiter Quick-View</span>
+        </button>
+        <a href="mailto:ssandeepraj894@gmail.com" class="btn btn-sm btn-outline contact-cta">
+          <i class="ph ph-envelope-simple"></i>
+          <span>Get in Touch</span>
+        </a>
+
+        <!-- Mobile Hamburger Button -->
+        <button class="mobile-toggle-btn" id="mobileMenuToggle" aria-label="Open mobile navigation menu" aria-expanded="false">
+          <i class="ph ph-list" id="menuToggleIcon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer / Overlay (Guaranteed to work on Android & iOS) -->
+  <div class="mobile-menu-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-brand">
+        <span class="brand-badge">&lt;/&gt;</span>
+        <div>
+          <div style="font-weight: 700; color: #fff;">sandeepraj<span class="text-cyan">/portfolio</span></div>
+          <div style="font-size: 0.75rem; color: var(--text-muted);">C. Sandeepraj • Gnanamani Tech</div>
+        </div>
+      </div>
+      <button class="drawer-close-btn" id="closeDrawerBtn" aria-label="Close mobile menu">
+        <i class="ph ph-x"></i>
+      </button>
+    </div>
+
+    <div class="drawer-nav">
+      <a href="#about" class="drawer-link"><i class="ph ph-user"></i> About Me</a>
+      <a href="#process" class="drawer-link"><i class="ph ph-git-branch"></i> Engineering Process</a>
+      <a href="#projects" class="drawer-link"><i class="ph ph-code-block"></i> Projects &amp; Code</a>
+      <a href="#skills" class="drawer-link"><i class="ph ph-chart-polar"></i> Skill Matrix</a>
+      <a href="#credentials" class="drawer-link"><i class="ph ph-graduation-cap"></i> Experience &amp; Education</a>
+      <a href="#contact" class="drawer-link"><i class="ph ph-paper-plane-tilt"></i> Contact &amp; Connect</a>
+    </div>
+
+    <div class="drawer-footer">
+      <button class="btn btn-accent w-full" id="drawerRecruiterBtn" style="margin-bottom: 0.75rem;">
+        <i class="ph ph-briefcase"></i> Recruiter Quick-View
+      </button>
+      <div class="drawer-quick-links">
+        <a href="tel:+918754148144" class="quick-touch-btn"><i class="ph ph-phone-call"></i> Call</a>
+        <a href="mailto:ssandeepraj894@gmail.com" class="quick-touch-btn"><i class="ph ph-envelope"></i> Email</a>
+        <a href="https://linkedin.com/in/sandeepraj-c-471000299" target="_blank" rel="noopener" class="quick-touch-btn"><i class="ph ph-linkedin-logo"></i> LinkedIn</a>
+        <a href="https://github.com/ssandeepraj894-droid" target="_blank" rel="noopener" class="quick-touch-btn"><i class="ph ph-github-logo"></i> GitHub</a>
+      </div>
+    </div>
+  </div>
+  <div class="mobile-drawer-backdrop" id="drawerBackdrop"></div>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION: Crisp, Authentic, Student Profile
+         ========================================================================== -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-layout">
+        
+        <!-- Left: Text Content & CTAs -->
+        <div class="hero-text-col">
+          <div class="hero-top-badges">
+            <div class="student-status-chip">
+              <span class="live-dot"></span>
+              <span>B.Tech AI &amp; Data Science • Class of 2027</span>
+            </div>
+            <div class="live-url-badge" id="heroLiveUrlBadge" role="button" tabindex="0" title="Click to copy portfolio URL">
+              <i class="ph ph-globe"></i>
+              <span class="url-text">sandeepraj<span class="text-cyan">/portfolio</span></span>
+              <span class="copy-hint" id="badgeCopyHint"><i class="ph ph-copy"></i> Copy</span>
+            </div>
+          </div>
+
+          <h1 class="hero-headline">
+            Where <span class="gradient-text">Data Engineering</span> Meets Intuitive <span class="gradient-text-alt">UI/UX Design</span>.
+          </h1>
+
+          <p class="hero-summary">
+            Hi, I'm <strong>C. Sandeepraj</strong>. A passionate AI &amp; Data Science pre-final year student at <strong>Gnanamani College of Technology</strong> (Top 10% Rank, 8.2 CGPA). I build real-world solutions by uniting <strong>Python, C, SQL, and Machine Learning</strong> with clean, research-driven <strong>UI/UX Prototyping in Figma</strong>.
+          </p>
+
+          <!-- Perspective Switcher -->
+          <div class="perspective-box">
+            <span class="perspective-label">View My Focus Area:</span>
+            <div class="perspective-pills">
+              <button class="p-pill active" data-perspective="data">
+                <i class="ph ph-chart-line-up"></i> Data &amp; ML
+              </button>
+              <button class="p-pill" data-perspective="uiux">
+                <i class="ph ph-figma-logo"></i> UI/UX Design
+              </button>
+              <button class="p-pill" data-perspective="embedded">
+                <i class="ph ph-cpu"></i> C &amp; Embedded IoT
+              </button>
+            </div>
+          </div>
+
+          <!-- Hero Action Links -->
+          <div class="hero-action-buttons">
+            <a href="#process" class="btn btn-primary">
+              <i class="ph ph-arrow-down"></i> Explore My Process
+            </a>
+            <a href="#projects" class="btn btn-secondary">
+              <i class="ph ph-folder-open"></i> View Projects
+            </a>
+            <a href="https://github.com/ssandeepraj894-droid" target="_blank" rel="noopener" class="btn btn-outline" title="GitHub Profile">
+              <i class="ph ph-github-logo"></i> GitHub
+            </a>
+            <a href="https://linkedin.com/in/sandeepraj-c-471000299" target="_blank" rel="noopener" class="btn btn-outline" title="LinkedIn Profile">
+              <i class="ph ph-linkedin-logo"></i> LinkedIn
+            </a>
+          </div>
+
+          <!-- Key Quantitative Proof Points -->
+          <div class="hero-metric-grid">
+            <div class="metric-card">
+              <div class="metric-num">8.2 / 10</div>
+              <div class="metric-desc">B.Tech CGPA (Top 10%)</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-num text-cyan">-15%</div>
+              <div class="metric-desc">Latency Reduced (Tech Volt)</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-num text-amber">Runner-Up</div>
+              <div class="metric-desc">National AI Quizoff 2026</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-num text-purple">2 Internships</div>
+              <div class="metric-desc">ML &amp; UI/UX Industry Exp</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Official Unedited Portrait Photo -->
+        <div class="hero-photo-col">
+          <div class="portrait-card">
+            <div class="portrait-photo-box">
+              <img src="profile.jpg" alt="C. Sandeepraj - Official Student Portrait" class="student-portrait-img">
+            </div>
+
+            <div class="portrait-info-strip">
+              <div class="student-meta">
+                <span class="student-name">C. Sandeepraj</span>
+                <span class="student-college">Gnanamani College of Technology</span>
+                <span class="student-dept">Namakkal, Tamil Nadu, 637404</span>
+              </div>
+              <div class="badge-student-verified">
+                <i class="ph ph-seal-check"></i> Verified Student
+              </div>
+            </div>
+
+            <div class="portrait-quick-contact">
+              <a href="tel:+918754148144" class="p-contact-item" title="Call directly">
+                <i class="ph ph-phone"></i> +91 8754148144
+              </a>
+              <a href="mailto:ssandeepraj894@gmail.com" class="p-contact-item" title="Send email">
+                <i class="ph ph-envelope"></i> ssandeepraj894@gmail.com
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 1: ABOUT ME & CORE PHILOSOPHY
+         ========================================================================== -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-tag">// Background &amp; Vision</span>
+          <h2 class="section-heading">Bridging Quantitative Insight with Design Empathy</h2>
+          <p class="section-subheading">
+            How a computer science student bridges rigorous backend algorithms with seamless digital product experiences.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card">
+            <div class="card-icon text-cyan"><i class="ph ph-code"></i></div>
+            <h3 class="card-title">Technical Execution (Python, C, SQL)</h3>
+            <p class="card-text">
+              Strong grounding in low-level C programming, database management systems (DBMS), and modern machine learning pipelines in Python (NumPy, Pandas, SciPy, Matplotlib). Focused on writing clean, resource-conscious code with minimal memory footprints.
+            </p>
+          </div>
+
+          <div class="about-card">
+            <div class="card-icon text-magenta"><i class="ph ph-palette"></i></div>
+            <h3 class="card-title">UI/UX &amp; Design Systems</h3>
+            <p class="card-text">
+              Interned at <strong>Tech Vedhu</strong> conducting qualitative user research, formulating responsive design tokens, and prototyping high-conversion flows. I believe technical intelligence is useless if humans cannot intuitively use the product.
+            </p>
+          </div>
+
+          <div class="about-card">
+            <div class="card-icon text-amber"><i class="ph ph-chart-polar"></i></div>
+            <h3 class="card-title">Business Intelligence &amp; Analytics</h3>
+            <p class="card-text">
+              Proficient in transforming messy multi-source data into actionable business intelligence using Power BI, SQL queries, and interactive visual dashboards. Experienced in trend discovery, cohort analysis, and anomaly visualization.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 2: MY BEST PROCESS (THE 4-STAGE DESIGN-TO-DATA PIPELINE)
+         ========================================================================== -->
+    <section id="process" class="section section-alt">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-tag">// Engineering Methodology</span>
+          <h2 class="section-heading">My 4-Stage Engineering &amp; Design Process</h2>
+          <p class="section-subheading">
+            Here is how I approach complex technical challenges: from raw data extraction to interactive modeling, UX wireframing, and measurable optimization.
+          </p>
+        </div>
+
+        <!-- Interactive Process Tabs (Touch-friendly on Android/iOS) -->
+        <div class="process-tabs-wrap">
+          <div class="process-tab-nav" role="tablist">
+            <button class="p-tab-btn active" data-tab="tab-stage1" role="tab" aria-selected="true">
+              <span class="step-num">01</span>
+              <span>Raw Querying &amp; Extraction</span>
+            </button>
+            <button class="p-tab-btn" data-tab="tab-stage2" role="tab" aria-selected="false">
+              <span class="step-num">02</span>
+              <span>Analysis &amp; Modeling</span>
+            </button>
+            <button class="p-tab-btn" data-tab="tab-stage3" role="tab" aria-selected="false">
+              <span class="step-num">03</span>
+              <span>UX Blueprint &amp; Prototyping</span>
+            </button>
+            <button class="p-tab-btn" data-tab="tab-stage4" role="tab" aria-selected="false">
+              <span class="step-num">04</span>
+              <span>Validation &amp; Impact</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- STAGE 1: Live Interactive Terminal (SQL & C) -->
+        <div class="process-content-card active" id="tab-stage1">
+          <div class="stage-info-bar">
+            <div>
+              <h3 class="stage-name">Stage 01: High-Performance Data Extraction &amp; Signal Filtering</h3>
+              <p class="stage-sub">Using SQL and C to extract clean, structured datasets and reject hardware sensor noise at the edge.</p>
+            </div>
+            <div class="stage-tech-tags">
+              <span class="tech-tag">SQL (PostgreSQL/MySQL)</span>
+              <span class="tech-tag">C Programming</span>
+              <span class="tech-tag">DBMS</span>
+            </div>
+          </div>
+
+          <div class="terminal-shell">
+            <div class="terminal-top">
+              <div class="term-traffic-lights">
+                <span class="light red"></span>
+                <span class="light yellow"></span>
+                <span class="light green"></span>
+              </div>
+              <div class="term-file-tabs">
+                <button class="t-file-btn active" id="termSqlTab">voltrix_anomaly_query.sql</button>
+                <button class="t-file-btn" id="termCTab">pir_signal_filter.c</button>
+              </div>
+              <span class="term-env font-mono">env: linux-x86_64</span>
+            </div>
+
+            <div class="terminal-code font-mono" id="terminalCodeArea">
+              <!-- Dynamically populated via JavaScript -->
+            </div>
+
+            <div class="terminal-controls">
+              <button class="btn btn-sm btn-outline" id="clearTermBtn">
+                <i class="ph ph-trash"></i> Clear Log
+              </button>
+              <button class="btn btn-sm btn-primary" id="runTermBtn">
+                <i class="ph ph-play"></i> Run Code Simulation
+              </button>
+            </div>
+
+            <div class="terminal-output font-mono" id="terminalOutputArea">
+              <div class="term-log-line text-muted">[System Ready] Click "Run Code Simulation" to test streaming data execution.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 2: Live Interactive EV Battery Degradation Dashboard -->
+        <div class="process-content-card" id="tab-stage2">
+          <div class="stage-info-bar">
+            <div>
+              <h3 class="stage-name">Stage 02: Predictive Analysis &amp; Telemetry Modeling</h3>
+              <p class="stage-sub">Live simulation of the <strong>Voltrix EV Battery System</strong>. Adjust variables below to recalculate degradation rate and anomaly state in real time.</p>
+            </div>
+            <div class="stage-tech-tags">
+              <span class="tech-tag">Python (SciPy/Pandas)</span>
+              <span class="tech-tag">Machine Learning</span>
+              <span class="tech-tag">Power BI</span>
+            </div>
+          </div>
+
+          <div class="calculator-grid">
+            <div class="calc-controls">
+              <div class="slider-control-item">
+                <div class="slider-head">
+                  <label for="rangeSoc">Battery State of Charge (SoC):</label>
+                  <span id="labelSoc" class="font-mono text-cyan">82%</span>
+                </div>
+                <input type="range" id="rangeSoc" class="touch-slider" min="10" max="100" value="82">
+              </div>
+
+              <div class="slider-control-item">
+                <div class="slider-head">
+                  <label for="rangeTemp">Pack Temperature:</label>
+                  <span id="labelTemp" class="font-mono text-amber">32°C</span>
+                </div>
+                <input type="range" id="rangeTemp" class="touch-slider" min="15" max="65" value="32">
+              </div>
+
+              <div class="slider-control-item">
+                <div class="slider-head">
+                  <label for="rangeCycles">Discharge Cycles Completed:</label>
+                  <span id="labelCycles" class="font-mono text-purple">350</span>
+                </div>
+                <input type="range" id="rangeCycles" class="touch-slider" min="50" max="1500" value="350">
+              </div>
+
+              <div class="calc-note">
+                <i class="ph ph-info"></i>
+                <span>Calculated via Arrhenius thermal degradation and streaming standard deviation Z-Scores.</span>
+              </div>
+            </div>
+
+            <div class="calc-readouts">
+              <div class="readout-kpis">
+                <div class="kpi-box">
+                  <span class="kpi-label">Health Index (SOH)</span>
+                  <span class="kpi-val text-cyan" id="kpiSoh">94.8%</span>
+                </div>
+                <div class="kpi-box">
+                  <span class="kpi-label">Degradation Slope</span>
+                  <span class="kpi-val text-amber" id="kpiDeg">0.015% / cycle</span>
+                </div>
+                <div class="kpi-box">
+                  <span class="kpi-label">Status Flag</span>
+                  <span class="kpi-val text-green" id="kpiFlag">OPTIMAL HEALTH</span>
+                </div>
+              </div>
+
+              <div class="chart-canvas-box">
+                <canvas id="batteryChartCanvas"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 3: UX Blueprint & Prototyping (Interactive Comparison) -->
+        <div class="process-content-card" id="tab-stage3">
+          <div class="stage-info-bar">
+            <div>
+              <h3 class="stage-name">Stage 03: Wireframe Blueprint to Production UI</h3>
+              <p class="stage-sub">Interactive comparison slider from the <strong>Food Delivery Customer Experience</strong> case study. Touch or drag the center handle to see how wireframes transformed into a high-conversion design system.</p>
+            </div>
+            <div class="stage-tech-tags">
+              <span class="tech-tag">Figma Prototyping</span>
+              <span class="tech-tag">User Research</span>
+              <span class="tech-tag">Design Systems</span>
+            </div>
+          </div>
+
+          <div class="split-comparison-container" id="splitSliderBox">
+            <!-- Left Side: Wireframe -->
+            <div class="split-side side-wireframe">
+              <div class="wireframe-mock-content">
+                <div class="wire-header">
+                  <div class="wire-bar short"></div>
+                  <div class="wire-bar long"></div>
+                </div>
+                <div class="wire-card-grid">
+                  <div class="wire-box">
+                    <div class="wire-box-img"></div>
+                    <div class="wire-bar"></div>
+                    <div class="wire-bar half"></div>
+                  </div>
+                  <div class="wire-box">
+                    <div class="wire-box-img"></div>
+                    <div class="wire-bar"></div>
+                    <div class="wire-bar half"></div>
+                  </div>
+                </div>
+                <div class="wire-label-tag">[ STRUCTURAL WIREFRAME // FIGMA ]</div>
+              </div>
+            </div>
+
+            <!-- Right Side: High-Fidelity UI -->
+            <div class="split-side side-polished" id="splitPolishedSide">
+              <div class="polished-mock-content">
+                <div class="polish-card">
+                  <div class="dish-badge">Artisan Bistro • ★ 4.9</div>
+                  <div class="dish-title">Truffle Pasta &amp; Salad</div>
+                  <div class="dish-sub">Delivery in 22 mins • Live GPS Tracking</div>
+                  <div class="dish-btn">1-Click Quick Order</div>
+                </div>
+                <div class="polish-card highlight-card">
+                  <div class="dish-badge" style="background: var(--accent-cyan); color: #000;">GPS Telemetry</div>
+                  <div class="dish-title">Courier On Route</div>
+                  <div class="dish-sub">0.8 km away • ETA 6 mins</div>
+                  <div class="dish-btn" style="background: rgba(6,182,212,0.2); border: 1px solid var(--accent-cyan); color: var(--accent-cyan);">View Live Map</div>
+                </div>
+                <div class="polish-label-tag">[ HIGH-FIDELITY DESIGN SYSTEM // 60 FPS ]</div>
+              </div>
+            </div>
+
+            <!-- Draggable Divider Handle -->
+            <div class="split-divider-handle" id="splitDividerHandle">
+              <div class="handle-thumb">
+                <i class="ph ph-arrows-left-right"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 4: Validation & Real-World Impact -->
+        <div class="process-content-card" id="tab-stage4">
+          <div class="stage-info-bar">
+            <div>
+              <h3 class="stage-name">Stage 04: Real-World Metrics &amp; Industrial Validation</h3>
+              <p class="stage-sub">Validating software through empirical measurement, testing latency, noise rejection, and customer retention.</p>
+            </div>
+            <div class="stage-tech-tags">
+              <span class="tech-tag">Benchmark Testing</span>
+              <span class="tech-tag">Performance Tuning</span>
+              <span class="tech-tag">User Testing</span>
+            </div>
+          </div>
+
+          <div class="impact-metrics-row">
+            <div class="impact-card">
+              <div class="impact-icon text-cyan"><i class="ph ph-gauge"></i></div>
+              <div class="impact-val">-15%</div>
+              <div class="impact-title">Latency Optimization</div>
+              <p class="impact-text">
+                Implemented vectorized NumPy operations and optimized pipeline transforms at Tech Volt, cutting dataset preprocessing time by 15%.
+              </p>
+            </div>
+
+            <div class="impact-card">
+              <div class="impact-icon text-amber"><i class="ph ph-wave-sine"></i></div>
+              <div class="impact-val">84%</div>
+              <div class="impact-title">False Alarms Suppressed</div>
+              <p class="impact-text">
+                Developed a fixed-point digital IIR filter in C for PIR hardware sensors, successfully eliminating environmental thermal motion noise.
+              </p>
+            </div>
+
+            <div class="impact-card">
+              <div class="impact-icon text-magenta"><i class="ph ph-shopping-cart"></i></div>
+              <div class="impact-val">-35%</div>
+              <div class="impact-title">Checkout Drop-Off Reduced</div>
+              <p class="impact-text">
+                Redesigned the food delivery checkout flow into a streamlined 2-step process, cutting cart abandonment in testing sessions at Tech Vedhu.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 3: REAL PROJECTS (Mobile-Friendly Under-The-Hood Toggle)
+         ========================================================================== -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-tag">// Portfolio Case Studies</span>
+          <h2 class="section-heading">Featured Technical Projects</h2>
+          <p class="section-subheading">
+            Each project can be inspected in two modes: <strong>Visual Overview</strong> and <strong>Under the Hood (Code &amp; Architecture)</strong>.
+          </p>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="project-filter-row">
+          <button class="filter-pill active" data-filter="all">All Projects (4)</button>
+          <button class="filter-pill" data-filter="ml">Machine Learning &amp; Python</button>
+          <button class="filter-pill" data-filter="iot">IoT &amp; C Programming</button>
+          <button class="filter-pill" data-filter="design">UI/UX &amp; Figma</button>
+          <button class="filter-pill" data-filter="ai">AI Research</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+          
+          <!-- PROJECT 1: Voltrix EV Fleet Monitoring -->
+          <div class="project-item-card" data-category="ml">
+            <div class="p-card-header">
+              <div class="p-category text-cyan">
+                <i class="ph ph-car-battery"></i> EV Fleet Telemetry // Python &amp; ML
+              </div>
+              <button class="toggle-code-btn" data-target="code-voltrix" aria-label="Toggle code for Voltrix">
+                <i class="ph ph-code"></i>
+                <span class="btn-text">Inspect Code</span>
+              </button>
+            </div>
+
+            <h3 class="p-title">Voltrix — Real-Time EV Fleet Monitoring System</h3>
+            <p class="p-desc">
+              Built a real-time battery health monitoring and anomaly detection platform for electric vehicle fleets. Implemented predictive degradation models in Python to alert fleet managers before battery degradation occurs.
+            </p>
+
+            <!-- Front Preview -->
+            <div class="p-view-front active" id="view-voltrix-front">
+              <div class="project-visual-box">
+                <div class="visual-kpi-bar">
+                  <div>
+                    <span class="vk-label">Fleet Battery SOH</span>
+                    <span class="vk-val text-cyan">96.8% Average</span>
+                  </div>
+                  <div>
+                    <span class="vk-label">Optimization</span>
+                    <span class="vk-val text-green">-15% Latency</span>
+                  </div>
+                </div>
+                <div class="visual-pulse-strip">
+                  <span class="pulse-beacon"></span>
+                  <span>Active Sensor Telemetry Stream (50Hz Ingestion)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Code Preview -->
+            <div class="p-view-code" id="code-voltrix">
+              <div class="code-box-header">
+                <span class="font-mono text-xs text-cyan">voltrix_degradation_model.py</span>
+                <span class="font-mono text-xs text-muted">Python 3.12</span>
+              </div>
+              <pre class="code-pre font-mono"><code>import numpy as np
+import pandas as pd
+
+def predict_battery_degradation(cycles, temp_c, base_soh=100.0):
+    """
+    Arrhenius electro-chemical degradation model.
+    """
+    temp_k = temp_c + 273.15
+    thermal_stress = np.exp(-0.32 / (8.314 * temp_k * 1e-3))
+    degradation = 0.0015 * np.sqrt(cycles) * thermal_stress * 100
+    return max(60.0, base_soh - degradation)
+
+def detect_anomaly(telemetry_stream, threshold_z=2.58):
+    rolling_mean = telemetry_stream['cell_v'].rolling(30).mean()
+    rolling_std = telemetry_stream['cell_v'].rolling(30).std()
+    z_scores = (telemetry_stream['cell_v'] - rolling_mean) / rolling_std
+    return telemetry_stream[np.abs(z_scores) > threshold_z]</code></pre>
+            </div>
+
+            <div class="p-card-footer">
+              <div class="tag-list">
+                <span class="badge-tag">Python</span>
+                <span class="badge-tag">Machine Learning</span>
+                <span class="badge-tag">Power BI</span>
+                <span class="badge-tag">SQL</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 2: False Alarm Reduction in PIR Sensors -->
+          <div class="project-item-card" data-category="iot">
+            <div class="p-card-header">
+              <div class="p-category text-amber">
+                <i class="ph ph-broadcast"></i> Embedded Signal Processing // C &amp; IoT
+              </div>
+              <button class="toggle-code-btn" data-target="code-pir" aria-label="Toggle code for PIR Sensor">
+                <i class="ph ph-code"></i>
+                <span class="btn-text">Inspect Code</span>
+              </button>
+            </div>
+
+            <h3 class="p-title">PIR Sensor Motion Filter &amp; False Alarm Suppressor</h3>
+            <p class="p-desc">
+              Integrated PIR hardware sensors with custom digital signal-filtering algorithms in C. Eliminated environmental motion noise and thermal drift, achieving an 84% reduction in false security triggers with &lt; 4ms latency.
+            </p>
+
+            <!-- Front Preview -->
+            <div class="p-view-front active" id="view-pir-front">
+              <div class="project-visual-box">
+                <div class="visual-kpi-bar">
+                  <div>
+                    <span class="vk-label">Noise Rejection</span>
+                    <span class="vk-val text-amber">84% False Alarms Cut</span>
+                  </div>
+                  <div>
+                    <span class="vk-label">Filter Latency</span>
+                    <span class="vk-val text-cyan">&lt; 4ms Processing</span>
+                  </div>
+                </div>
+                <div class="visual-pulse-strip">
+                  <span class="pulse-beacon" style="background: var(--accent-amber);"></span>
+                  <span>Single-Pole IIR Filter with Zero Heap Overhead</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Code Preview -->
+            <div class="p-view-code" id="code-pir">
+              <div class="code-box-header">
+                <span class="font-mono text-xs text-amber">pir_iir_filter.c</span>
+                <span class="font-mono text-xs text-muted">C99 Fixed-Point</span>
+              </div>
+              <pre class="code-pre font-mono"><code>#include &lt;stdint.h&gt;
+#include &lt;stdbool.h&gt;
+
+#define ALPHA_WEIGHT 13  // 0.20 in fixed-point math
+static int32_t prev_output = 512;
+static const int32_t NOISE_THRESHOLD = 95;
+
+bool filter_pir_stream(int32_t adc_sample) {
+    // Single-pole IIR Exponential Filter with zero float overhead
+    int32_t filtered = ((ALPHA_WEIGHT * adc_sample) + 
+                       ((64 - ALPHA_WEIGHT) * prev_output)) >> 6;
+    prev_output = filtered;
+
+    int32_t diff = filtered - 512;
+    if (diff &lt; 0) diff = -diff;
+
+    // Reject environmental draft & thermal drift
+    return (diff > NOISE_THRESHOLD); 
+}</code></pre>
+            </div>
+
+            <div class="p-card-footer">
+              <div class="tag-list">
+                <span class="badge-tag">C Programming</span>
+                <span class="badge-tag">PIR Sensors</span>
+                <span class="badge-tag">Digital Filtering</span>
+                <span class="badge-tag">Embedded Systems</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 3: Food Delivery CX & Design System -->
+          <div class="project-item-card" data-category="design">
+            <div class="p-card-header">
+              <div class="p-category text-magenta">
+                <i class="ph ph-shopping-bag"></i> Product Design // UI/UX &amp; Figma
+              </div>
+              <button class="toggle-code-btn" data-target="code-food" aria-label="Toggle tokens for Food Delivery">
+                <i class="ph ph-sliders"></i>
+                <span class="btn-text">Inspect Tokens</span>
+              </button>
+            </div>
+
+            <h3 class="p-title">Food Delivery Customer Experience &amp; Design System</h3>
+            <p class="p-desc">
+              Conducted qualitative user research to understand pain points across restaurant discovery, food selection, cart, and checkout. Designed streamlined user flows, interactive prototypes, and design systems during my Tech Vedhu internship.
+            </p>
+
+            <!-- Front Preview -->
+            <div class="p-view-front active" id="view-food-front">
+              <div class="project-visual-box">
+                <div class="visual-kpi-bar">
+                  <div>
+                    <span class="vk-label">Cart Drop-Off</span>
+                    <span class="vk-val text-magenta">-35% Abandonment</span>
+                  </div>
+                  <div>
+                    <span class="vk-label">Usability Rating</span>
+                    <span class="vk-val text-green">4.8 / 5.0 Score</span>
+                  </div>
+                </div>
+                <div class="visual-pulse-strip">
+                  <span class="pulse-beacon" style="background: var(--accent-magenta);"></span>
+                  <span>Tested with 24 Users Across Think-Aloud Protocols</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Code Preview -->
+            <div class="p-view-code" id="code-food">
+              <div class="code-box-header">
+                <span class="font-mono text-xs text-magenta">design_tokens.json</span>
+                <span class="font-mono text-xs text-muted">Design System Schema</span>
+              </div>
+              <pre class="code-pre font-mono"><code>{
+  "system": "FoodDelivery-Core-v2",
+  "tokens": {
+    "spacing": { "xs": 4, "sm": 8, "md": 16, "lg": 24, "xl": 32 },
+    "radii": { "card": "16px", "button": "10px", "pill": "9999px" },
+    "motion": {
+      "tapBounce": { "scale": 0.96, "stiffness": 500, "damping": 30 },
+      "drawerSlide": { "duration": 320, "curve": [0.16, 1, 0.3, 1] }
+    },
+    "heuristics": {
+      "visibility": "Real-time courier GPS ping every 3s",
+      "errorPrevention": "Instant address geofencing check"
+    }
+  }
+}</code></pre>
+            </div>
+
+            <div class="p-card-footer">
+              <div class="tag-list">
+                <span class="badge-tag">Figma</span>
+                <span class="badge-tag">User Research</span>
+                <span class="badge-tag">Wireframing</span>
+                <span class="badge-tag">Design Systems</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 4: Quantum Computing Applications & AI Quizoff -->
+          <div class="project-item-card" data-category="ai">
+            <div class="p-card-header">
+              <div class="p-category text-purple">
+                <i class="ph ph-atom"></i> Research &amp; Competition // National AI Honor
+              </div>
+              <button class="toggle-code-btn" data-target="code-quantum" aria-label="Toggle code for Quantum Research">
+                <i class="ph ph-code"></i>
+                <span class="btn-text">Inspect Logic</span>
+              </button>
+            </div>
+
+            <h3 class="p-title">Quantum Computing Applications &amp; National AI Honors</h3>
+            <p class="p-desc">
+              Presented paper on <em>"Quantum Computing Applications Beyond Cryptography"</em> at Thakur College of Engineering &amp; Technology (TCET), Mumbai. Awarded <strong>Runner-Up in the National AI Quizoff 2026</strong>.
+            </p>
+
+            <!-- Front Preview -->
+            <div class="p-view-front active" id="view-quantum-front">
+              <div class="project-visual-box">
+                <div class="visual-kpi-bar">
+                  <div>
+                    <span class="vk-label">AI Competition</span>
+                    <span class="vk-val text-amber">National Runner-Up</span>
+                  </div>
+                  <div>
+                    <span class="vk-label">Symposium</span>
+                    <span class="vk-val text-purple">TCET Mumbai</span>
+                  </div>
+                </div>
+                <div class="visual-pulse-strip">
+                  <span class="pulse-beacon" style="background: var(--accent-purple);"></span>
+                  <span>Quantum Optimization Applied to Vehicle Routing</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Code Preview -->
+            <div class="p-view-code" id="code-quantum">
+              <div class="code-box-header">
+                <span class="font-mono text-xs text-purple">qaoa_hamiltonian.py</span>
+                <span class="font-mono text-xs text-muted">Quantum Simulation</span>
+              </div>
+              <pre class="code-pre font-mono"><code>import numpy as np
+
+def build_ising_hamiltonian(adjacency_matrix):
+    """
+    Map graph partitioning for routing optimization
+    onto quantum spin Hamiltonian.
+    """
+    n_nodes = len(adjacency_matrix)
+    H_cost = np.zeros((2**n_nodes, 2**n_nodes))
+    for i in range(n_nodes):
+        for j in range(i + 1, n_nodes):
+            if adjacency_matrix[i][j] > 0:
+                H_cost += compute_sigma_z_product(i, j, n_nodes)
+    return H_cost</code></pre>
+            </div>
+
+            <div class="p-card-footer">
+              <div class="tag-list">
+                <span class="badge-tag">Artificial Intelligence</span>
+                <span class="badge-tag">Quantum Systems</span>
+                <span class="badge-tag">Data Science</span>
+                <span class="badge-tag">Research</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 4: QUANTITATIVE SKILL MATRIX
+         ========================================================================== -->
+    <section id="skills" class="section section-alt">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-tag">// Technical Toolchain</span>
+          <h2 class="section-heading">Verified Skills &amp; Technical Capabilities</h2>
+          <p class="section-subheading">
+            Grounded in coursework, two industrial internships, and competitive hackathon projects.
+          </p>
+        </div>
+
+        <div class="skills-two-col">
+          <!-- Skill Groups -->
+          <div class="skill-category-list">
+            
+            <div class="skill-group-card">
+              <div class="group-title text-cyan">
+                <i class="ph ph-database"></i> Core Programming &amp; Data Engineering
+              </div>
+              <div class="skill-pill-wrap">
+                <span class="s-pill">Python 3.x</span>
+                <span class="s-pill">C Programming</span>
+                <span class="s-pill">SQL (PostgreSQL/MySQL)</span>
+                <span class="s-pill">DBMS Architecture</span>
+                <span class="s-pill">Data Pipelines</span>
+                <span class="s-pill">Web Scraping</span>
+              </div>
+            </div>
+
+            <div class="skill-group-card">
+              <div class="group-title text-amber">
+                <i class="ph ph-chart-bar"></i> Analytics, ML &amp; Business Intelligence
+              </div>
+              <div class="skill-pill-wrap">
+                <span class="s-pill">Machine Learning</span>
+                <span class="s-pill">NumPy &amp; Pandas</span>
+                <span class="s-pill">SciPy &amp; Optimization</span>
+                <span class="s-pill">Matplotlib / Seaborn</span>
+                <span class="s-pill">Power BI Dashboards</span>
+                <span class="s-pill">Data Processing</span>
+              </div>
+            </div>
+
+            <div class="skill-group-card">
+              <div class="group-title text-magenta">
+                <i class="ph ph-figma-logo"></i> UI/UX Design &amp; Prototyping
+              </div>
+              <div class="skill-pill-wrap">
+                <span class="s-pill">Figma Prototyping</span>
+                <span class="s-pill">User Research</span>
+                <span class="s-pill">Wireframing</span>
+                <span class="s-pill">Design Systems</span>
+                <span class="s-pill">Usability Testing</span>
+                <span class="s-pill">Mobile &amp; Responsive Web</span>
+              </div>
+            </div>
+
+            <div class="skill-group-card">
+              <div class="group-title text-purple">
+                <i class="ph ph-film-strip"></i> Motion &amp; Systems Integration
+              </div>
+              <div class="skill-pill-wrap">
+                <span class="s-pill">Micro-interactions</span>
+                <span class="s-pill">Framer Motion</span>
+                <span class="s-pill">Canvas 2D</span>
+                <span class="s-pill">Physics-Based Springs</span>
+                <span class="s-pill">PIR &amp; Sensor IoT</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Radar Chart Visualizer (Touch-interactive on mobile) -->
+          <div class="radar-box-card">
+            <div class="radar-header">
+              <h3 class="radar-title">Multi-Disciplinary Radar</h3>
+              <p class="radar-sub">Balancing machine learning, low-level systems, and human-centric UI/UX.</p>
+            </div>
+
+            <div class="radar-canvas-container">
+              <canvas id="skillRadarCanvas"></canvas>
+            </div>
+
+            <div class="radar-stat-strip">
+              <div><span class="dot-indicator" style="background: var(--accent-cyan);"></span> Data &amp; ML: 94%</div>
+              <div><span class="dot-indicator" style="background: var(--accent-magenta);"></span> UI/UX Design: 90%</div>
+              <div><span class="dot-indicator" style="background: var(--accent-amber);"></span> Systems in C: 85%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 5: EDUCATION, INTERNSHIPS & HONORS
+         ========================================================================== -->
+    <section id="credentials" class="section">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-tag">// Verified Pedigree</span>
+          <h2 class="section-heading">Education, Internships &amp; Achievements</h2>
+          <p class="section-subheading">
+            Academic achievements, verified industrial training, and competitive distinctions.
+          </p>
+        </div>
+
+        <div class="timeline-two-col">
+          <!-- Col 1: Internships -->
+          <div class="timeline-col">
+            <h3 class="t-col-heading text-cyan">
+              <i class="ph ph-briefcase"></i> Industrial Internships
+            </h3>
+
+            <div class="t-entry">
+              <div class="t-date">01/07/2026 – 10/07/2026 • Coimbatore, TN</div>
+              <h4 class="t-role">Machine Learning Intern</h4>
+              <div class="t-org">Tech Volt Pvt Ltd</div>
+              <ul class="t-bullets">
+                <li>Cleaned and preprocessed large-scale industrial sensor datasets for predictive modeling pipelines.</li>
+                <li>Implemented machine learning algorithms, reducing overall data processing latency by <strong>15%</strong>.</li>
+              </ul>
+            </div>
+
+            <div class="t-entry">
+              <div class="t-date">01/07/2025 – 15/07/2025 • Salem, TN</div>
+              <h4 class="t-role">UI/UX Design Intern</h4>
+              <div class="t-org">Tech Vedhu</div>
+              <ul class="t-bullets">
+                <li>Conducted qualitative user research to inform wireframes and interactive prototypes, improving user workflow efficiency.</li>
+                <li>Defined scalable design systems to ensure consistency across web and mobile platforms.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Col 2: Education & Awards -->
+          <div class="timeline-col">
+            <h3 class="t-col-heading text-magenta">
+              <i class="ph ph-graduation-cap"></i> Education &amp; Honors
+            </h3>
+
+            <div class="t-entry">
+              <div class="t-date">15/07/2023 – Current • Namakkal, TN</div>
+              <h4 class="t-role">B.Tech in Artificial Intelligence &amp; Data Science</h4>
+              <div class="t-org">Gnanamani College of Technology</div>
+              <ul class="t-bullets">
+                <li>Achieved <strong>Top 10% class rank</strong> with a cumulative CGPA of <strong>8.2 / 10</strong>.</li>
+                <li>Core focus: Machine Learning, Database Management Systems (DBMS), Business Intelligence &amp; Dashboard Development.</li>
+              </ul>
+            </div>
+
+            <div class="honor-entry">
+              <div class="honor-icon text-amber"><i class="ph ph-trophy"></i></div>
+              <div>
+                <strong>National AI Runner-Up — Quizoff 2026</strong>
+                <p>Awarded 2nd place nationwide in competitive AI algorithms, machine learning logic, and system architecture.</p>
+              </div>
+            </div>
+
+            <div class="honor-entry">
+              <div class="honor-icon text-purple"><i class="ph ph-presentation-chart"></i></div>
+              <div>
+                <strong>Paper Presentation — TCET Mumbai</strong>
+                <p>Presented <em>"Quantum Computing Applications Beyond Cryptography"</em> at Thakur College of Engineering &amp; Technology.</p>
+              </div>
+            </div>
+
+            <div class="honor-entry">
+              <div class="honor-icon text-cyan"><i class="ph ph-certificate"></i></div>
+              <div>
+                <strong>Google &amp; Coursera Data Science Specialization</strong>
+                <p>Completed professional certifications in Data Analytics and Applied Data Science.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 6: CONTACT & DIRECT CONNECT (Every Link Guaranteed Working)
+         ========================================================================== -->
+    <section id="contact" class="section section-alt">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-tag">// Get In Touch</span>
+          <h2 class="section-heading">Connect Directly with C. Sandeepraj</h2>
+          <p class="section-subheading">
+            Whether for internships, entry-level engineering roles, or collaboration, feel free to reach out directly through any channel below.
+          </p>
+        </div>
+
+        <div class="contact-card-box">
+          <div class="contact-main-grid">
+            
+            <!-- Direct Click-To-Act Channels -->
+            <a href="mailto:ssandeepraj894@gmail.com" class="direct-channel-card" title="Click to send email">
+              <div class="dc-icon text-cyan"><i class="ph ph-envelope-simple"></i></div>
+              <div class="dc-text">
+                <span class="dc-label">Email Directly</span>
+                <span class="dc-val">ssandeepraj894@gmail.com</span>
+              </div>
+              <div class="dc-action"><i class="ph ph-arrow-up-right"></i></div>
+            </a>
+
+            <a href="tel:+918754148144" class="direct-channel-card" title="Click to call on phone">
+              <div class="dc-icon text-green"><i class="ph ph-phone-call"></i></div>
+              <div class="dc-text">
+                <span class="dc-label">Call Directly (Mobile)</span>
+                <span class="dc-val">+91 8754148144</span>
+              </div>
+              <div class="dc-action"><i class="ph ph-arrow-up-right"></i></div>
+            </a>
+
+            <a href="https://linkedin.com/in/sandeepraj-c-471000299" target="_blank" rel="noopener" class="direct-channel-card" title="Open LinkedIn Profile">
+              <div class="dc-icon text-blue"><i class="ph ph-linkedin-logo"></i></div>
+              <div class="dc-text">
+                <span class="dc-label">LinkedIn Connection</span>
+                <span class="dc-val">linkedin.com/in/sandeepraj-c-471000299</span>
+              </div>
+              <div class="dc-action"><i class="ph ph-arrow-up-right"></i></div>
+            </a>
+
+            <a href="https://github.com/ssandeepraj894-droid" target="_blank" rel="noopener" class="direct-channel-card" title="Open GitHub Profile">
+              <div class="dc-icon text-purple"><i class="ph ph-github-logo"></i></div>
+              <div class="dc-text">
+                <span class="dc-label">GitHub Repositories</span>
+                <span class="dc-val">github.com/ssandeepraj894-droid</span>
+              </div>
+              <div class="dc-action"><i class="ph ph-arrow-up-right"></i></div>
+            </a>
+
+          </div>
+
+          <!-- Quick Copy Tools -->
+          <div class="copy-tool-strip">
+            <span class="copy-strip-label">Quick Copy to Clipboard:</span>
+            <button class="btn btn-sm btn-outline" id="copyEmailBtn">
+              <i class="ph ph-copy"></i> <span>Copy Email</span>
+            </button>
+            <button class="btn btn-sm btn-outline" id="copyPhoneBtn">
+              <i class="ph ph-copy"></i> <span>Copy Phone</span>
+            </button>
+            <span id="copyFeedback" class="copy-feedback-msg">Copied!</span>
+          </div>
+
+          <!-- Student Location & Availability -->
+          <div class="contact-location-bar">
+            <span><i class="ph ph-map-pin"></i> Based in Namakkal, Tamil Nadu, 637404</span>
+            <span><i class="ph ph-briefcase"></i> Open for On-Site (Tamil Nadu / Bangalore) &amp; Remote Opportunities</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <span class="brand-badge">SR</span>
+        <div>
+          <div style="font-weight: 700; color: #fff;">C. Sandeepraj</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted);">B.Tech AI &amp; Data Science Student • Gnanamani College of Technology</div>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <a href="#hero">Back to Top ↑</a>
+        <a href="https://linkedin.com/in/sandeepraj-c-471000299" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/ssandeepraj894-droid" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:ssandeepraj894@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       RECRUITER QUICK-VIEW MODAL (Mobile-Optimized & Touch Friendly)
+       ========================================================================== -->
+  <div class="recruiter-modal-overlay" id="recruiterModal" role="dialog" aria-modal="true" aria-labelledby="recruiterModalTitle">
+    <div class="recruiter-modal-card">
+      <button class="modal-close-icon" id="closeRecruiterModal" aria-label="Close modal">
+        <i class="ph ph-x"></i>
+      </button>
+
+      <div class="modal-top">
+        <span class="modal-pill">// Student Hiring &amp; Campus Recruiter Quick-View</span>
+        <h3 class="modal-title" id="recruiterModalTitle">Candidate Evaluation: C. Sandeepraj</h3>
+        <p class="modal-desc">
+          <strong>B.Tech Artificial Intelligence &amp; Data Science Student</strong> at Gnanamani College of Technology (Top 10% Rank, 8.2 CGPA). Open for <strong>Internship</strong> and <strong>Entry-Level / Graduate Trainee (GET)</strong> roles.
+        </p>
+      </div>
+
+      <div class="modal-role-select">
+        <span class="m-label">Select Target Role to Benchmark:</span>
+        <div class="role-chip-group">
+          <button class="m-chip active" data-role-eval="hybrid">Hybrid Creative Technologist</button>
+          <button class="m-chip" data-role-eval="data">AI &amp; Data Science (Fresher / Intern)</button>
+          <button class="m-chip" data-role-eval="design">UI/UX &amp; Product Design</button>
+        </div>
+      </div>
+
+      <div class="modal-score-banner">
+        <div class="score-circle">
+          <span class="score-number" id="evalScoreDisplay">98%</span>
+          <span class="score-text">Match</span>
+        </div>
+        <div class="score-details">
+          <h4 class="score-title" id="evalTitleDisplay">Top-Tier Student Engineer Profile</h4>
+          <ul class="score-bullets" id="evalBulletsDisplay">
+            <li>Top 10% class rank with 8.2 / 10 CGPA in B.Tech AI &amp; Data Science at Gnanamani College of Technology.</li>
+            <li>Completed 2 industry internships: Tech Volt (ML Intern, -15% latency reduction) and Tech Vedhu (UI/UX Design Intern).</li>
+            <li>National Runner-Up at Quizoff 2026 AI Competition; presented research paper at TCET Mumbai.</li>
+            <li>Proficient across Python, C, SQL (PostgreSQL/MySQL), Power BI, and Figma.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="interview-guide-box">
+        <div class="ig-heading">
+          <i class="ph ph-chat-circle-dots"></i> Recommended Technical Questions for Campus / HR Interview:
+        </div>
+        <div class="ig-questions" id="evalQuestionsDisplay">
+          1. "How did your machine learning preprocessing at Tech Volt reduce data pipeline latency by 15%?"<br>
+          2. "Can you explain how your digital IIR filtering algorithm in C eliminated environmental noise for PIR motion sensors?"
+        </div>
+      </div>
+
+      <div class="modal-action-row">
+        <a href="tel:+918754148144" class="btn btn-outline">
+          <i class="ph ph-phone"></i> Call +91 8754148144
+        </a>
+        <a href="mailto:ssandeepraj894@gmail.com?subject=Campus%20Interview%20/%20Internship%20Opportunity%20for%20C.%20Sandeepraj" class="btn btn-primary">
+          <i class="ph ph-envelope-simple"></i> Contact for Interview / Internship
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="main.js"></script>
+</body>
+</html>
